@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyDWBk7reVz-X0hfnsXKUeErhq9SYCS-FLo</string>
+	<key>GCM_SENDER_ID</key>
+	<string>160487109867</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>www.felipe.com.LoginViewCode</string>
+	<key>PROJECT_ID</key>
+	<string>loginviewcode-386db</string>
+	<key>STORAGE_BUCKET</key>
+	<string>loginviewcode-386db.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:160487109867:ios:c5320abf97729ca6587aae</string>
+</dict>
+</plist>
