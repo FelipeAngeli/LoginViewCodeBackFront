@@ -35,6 +35,7 @@
 		931E75E42B227A77004CDFD9 /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 931E75E32B227A77004CDFD9 /* FirebaseRemoteConfigSwift */; };
 		931E75E62B227A77004CDFD9 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 931E75E52B227A77004CDFD9 /* FirebaseStorage */; };
 		931E75E82B227A77004CDFD9 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 931E75E72B227A77004CDFD9 /* FirebaseStorageCombine-Community */; };
+		932A3FDB2B27B01500998AEA /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932A3FDA2B27B01500998AEA /* Alert.swift */; };
 		938EC5F02B1E7F3200E9AED5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938EC5EF2B1E7F3200E9AED5 /* AppDelegate.swift */; };
 		938EC5F22B1E7F3200E9AED5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938EC5F12B1E7F3200E9AED5 /* SceneDelegate.swift */; };
 		938EC5F42B1E7F3200E9AED5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938EC5F32B1E7F3200E9AED5 /* ViewController.swift */; };
@@ -49,6 +50,7 @@
 
 /* Begin PBXFileReference section */
 		931E75B02B227969004CDFD9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		932A3FDA2B27B01500998AEA /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		938EC5EC2B1E7F3200E9AED5 /* LoginViewCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginViewCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		938EC5EF2B1E7F3200E9AED5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		938EC5F12B1E7F3200E9AED5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +123,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		932A3FD92B27AFFB00998AEA /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				932A3FDA2B27B01500998AEA /* Alert.swift */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
 		938EC5E32B1E7F3200E9AED5 = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +152,7 @@
 		938EC5EE2B1E7F3200E9AED5 /* LoginViewCode */ = {
 			isa = PBXGroup;
 			children = (
+				932A3FD92B27AFFB00998AEA /* Alert */,
 				938EC60A2B1E870C00E9AED5 /* Register */,
 				938EC6032B1E842900E9AED5 /* Login */,
 				938EC5EF2B1E7F3200E9AED5 /* AppDelegate.swift */,
@@ -358,6 +369,7 @@
 				938EC5F02B1E7F3200E9AED5 /* AppDelegate.swift in Sources */,
 				938EC6102B1E876300E9AED5 /* RegisterVC.swift in Sources */,
 				938EC5F22B1E7F3200E9AED5 /* SceneDelegate.swift in Sources */,
+				932A3FDB2B27B01500998AEA /* Alert.swift in Sources */,
 				938EC6092B1E84AA00E9AED5 /* LoginVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

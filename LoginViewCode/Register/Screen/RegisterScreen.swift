@@ -135,6 +135,17 @@ class RegisterScreen: UIView {
         }
     }
     
+    //get para infos da login
+    public func getEmail() -> String{
+        return self.emailTextField.text ?? ""
+    }
+    
+    public func getPassword() -> String{
+        return self.passwordTextField.text ?? ""
+    }
+    
+    
+    
     private func configButtonEnable(_ enable:Bool){
         if enable{
             self.registerButton.setTitleColor(.white, for: .normal)
