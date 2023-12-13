@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9319F96D2B2A59C10017DC8F /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9319F96C2B2A59C10017DC8F /* HomeVC.swift */; };
+		9319F96F2B2A5AEB0017DC8F /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9319F96E2B2A5AEB0017DC8F /* HomeScreen.swift */; };
+		9319F9722B2A6C990017DC8F /* UserDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9319F9712B2A6C990017DC8F /* UserDetailTableViewCell.swift */; };
+		9319F9752B2A701C0017DC8F /* DataUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9319F9742B2A701C0017DC8F /* DataUser.swift */; };
 		931E75B12B227969004CDFD9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 931E75B02B227969004CDFD9 /* GoogleService-Info.plist */; };
 		931E75B42B227A77004CDFD9 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 931E75B32B227A77004CDFD9 /* FirebaseAnalytics */; };
 		931E75B62B227A77004CDFD9 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 931E75B52B227A77004CDFD9 /* FirebaseAnalyticsOnDeviceConversion */; };
@@ -49,6 +53,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9319F96C2B2A59C10017DC8F /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		9319F96E2B2A5AEB0017DC8F /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		9319F9712B2A6C990017DC8F /* UserDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailTableViewCell.swift; sourceTree = "<group>"; };
+		9319F9742B2A701C0017DC8F /* DataUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataUser.swift; sourceTree = "<group>"; };
 		931E75B02B227969004CDFD9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		932A3FDA2B27B01500998AEA /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		938EC5EC2B1E7F3200E9AED5 /* LoginViewCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginViewCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,6 +131,49 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9319F9692B2A599B0017DC8F /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				9319F9732B2A70090017DC8F /* Model */,
+				9319F9702B2A6C390017DC8F /* Cell */,
+				9319F96B2B2A59A80017DC8F /* Screen */,
+				9319F96A2B2A59A20017DC8F /* VC */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		9319F96A2B2A59A20017DC8F /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				9319F96C2B2A59C10017DC8F /* HomeVC.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		9319F96B2B2A59A80017DC8F /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				9319F96E2B2A5AEB0017DC8F /* HomeScreen.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		9319F9702B2A6C390017DC8F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				9319F9712B2A6C990017DC8F /* UserDetailTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		9319F9732B2A70090017DC8F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9319F9742B2A701C0017DC8F /* DataUser.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		932A3FD92B27AFFB00998AEA /* Alert */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +203,7 @@
 		938EC5EE2B1E7F3200E9AED5 /* LoginViewCode */ = {
 			isa = PBXGroup;
 			children = (
+				9319F9692B2A599B0017DC8F /* Home */,
 				932A3FD92B27AFFB00998AEA /* Alert */,
 				938EC60A2B1E870C00E9AED5 /* Register */,
 				938EC6032B1E842900E9AED5 /* Login */,
@@ -364,10 +416,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				938EC60E2B1E874900E9AED5 /* RegisterScreen.swift in Sources */,
+				9319F9722B2A6C990017DC8F /* UserDetailTableViewCell.swift in Sources */,
+				9319F9752B2A701C0017DC8F /* DataUser.swift in Sources */,
 				938EC5F42B1E7F3200E9AED5 /* ViewController.swift in Sources */,
 				938EC6072B1E848F00E9AED5 /* LoginScreen.swift in Sources */,
+				9319F96D2B2A59C10017DC8F /* HomeVC.swift in Sources */,
 				938EC5F02B1E7F3200E9AED5 /* AppDelegate.swift in Sources */,
 				938EC6102B1E876300E9AED5 /* RegisterVC.swift in Sources */,
+				9319F96F2B2A5AEB0017DC8F /* HomeScreen.swift in Sources */,
 				938EC5F22B1E7F3200E9AED5 /* SceneDelegate.swift in Sources */,
 				932A3FDB2B27B01500998AEA /* Alert.swift in Sources */,
 				938EC6092B1E84AA00E9AED5 /* LoginVC.swift in Sources */,

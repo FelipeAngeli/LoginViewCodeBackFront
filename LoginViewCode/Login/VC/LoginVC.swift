@@ -37,26 +37,26 @@ class LoginVC: UIViewController {
 
 extension LoginVC:LoginScreenProtocol{
     func actionLoginButton() {
-        guard let login = self.loginScreen else {return}
-        
-        self.auth?.signIn(withEmail: login.getEmail(), password: login.getPassword(), completion: {(usuario, error) in
-            if error != nil{
-                self.alert?.getAlert(titulo: "Atenção", mensagem: "Dados incorretos, verifique e tente novamente!!")
-            } else {
-                if usuario == nil{
-                    self.alert?.getAlert(titulo: "Atenção", mensagem: "Tivemos um problema inesperado, tente novamente mais tarde")
-                } else {
-                    self.alert?.getAlert(titulo: "Parabéns", mensagem: "Usuario registrado com sucesso!!")
-                }
-            }
-            
-        })
+        let vc:HomeVC = HomeVC()
+        self.navigationController?.pushViewController(vc, animated: true)
+//        guard let login = self.loginScreen else {return}
+//        self.auth?.signIn(withEmail: login.getEmail(), password: login.getPassword(), completion: {(usuario, error) in
+//            if error != nil{
+//                self.alert?.getAlert(titulo: "Atenção", mensagem: "Dados incorretos, verifique e tente novamente!!")
+//            } else {
+//                if usuario == nil{
+//                    self.alert?.getAlert(titulo: "Atenção", mensagem: "Tivemos um problema inesperado, tente novamente mais tarde")
+//                } else {
+//                    self.alert?.getAlert(titulo: "Parabéns", mensagem: "Usuario registrado com sucesso!!")
+//                }
+//            }
+//            
+//        })
     }
     
     func actionRegisterButton() {
         let vc:RegisterVC = RegisterVC()
         self.navigationController?.pushViewController(vc, animated: true)
-        print("BOTAO REGISTER!!!")
     }
     
     
