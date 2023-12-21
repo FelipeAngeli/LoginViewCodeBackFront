@@ -49,6 +49,7 @@
 		938EC6092B1E84AA00E9AED5 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938EC6082B1E84AA00E9AED5 /* LoginVC.swift */; };
 		938EC60E2B1E874900E9AED5 /* RegisterScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938EC60D2B1E874900E9AED5 /* RegisterScreen.swift */; };
 		938EC6102B1E876300E9AED5 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938EC60F2B1E876300E9AED5 /* RegisterVC.swift */; };
+		93A1C43A2B34F2D600554B8D /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A1C4392B34F2D600554B8D /* UserDetailView.swift */; };
 		A8200B20796B465D1B576C94 /* Pods_LoginViewCode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F944DE1CBB37D268850BAC70 /* Pods_LoginViewCode.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +71,7 @@
 		938EC6082B1E84AA00E9AED5 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		938EC60D2B1E874900E9AED5 /* RegisterScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScreen.swift; sourceTree = "<group>"; };
 		938EC60F2B1E876300E9AED5 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
+		93A1C4392B34F2D600554B8D /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
 		A035C82D54E22161DCE525C6 /* Pods-LoginViewCode.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginViewCode.release.xcconfig"; path = "Target Support Files/Pods-LoginViewCode/Pods-LoginViewCode.release.xcconfig"; sourceTree = "<group>"; };
 		D414AC5D81734226603B1BED /* Pods-LoginViewCode.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginViewCode.debug.xcconfig"; path = "Target Support Files/Pods-LoginViewCode/Pods-LoginViewCode.debug.xcconfig"; sourceTree = "<group>"; };
 		F944DE1CBB37D268850BAC70 /* Pods_LoginViewCode.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoginViewCode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,6 +163,7 @@
 		9319F9702B2A6C390017DC8F /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				93A1C4382B34F29C00554B8D /* CustomView */,
 				9319F9712B2A6C990017DC8F /* UserDetailTableViewCell.swift */,
 			);
 			path = Cell;
@@ -266,6 +269,14 @@
 				938EC60F2B1E876300E9AED5 /* RegisterVC.swift */,
 			);
 			path = VC;
+			sourceTree = "<group>";
+		};
+		93A1C4382B34F29C00554B8D /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				93A1C4392B34F2D600554B8D /* UserDetailView.swift */,
+			);
+			path = CustomView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -419,6 +430,7 @@
 				9319F9722B2A6C990017DC8F /* UserDetailTableViewCell.swift in Sources */,
 				9319F9752B2A701C0017DC8F /* DataUser.swift in Sources */,
 				938EC5F42B1E7F3200E9AED5 /* ViewController.swift in Sources */,
+				93A1C43A2B34F2D600554B8D /* UserDetailView.swift in Sources */,
 				938EC6072B1E848F00E9AED5 /* LoginScreen.swift in Sources */,
 				9319F96D2B2A59C10017DC8F /* HomeVC.swift in Sources */,
 				938EC5F02B1E7F3200E9AED5 /* AppDelegate.swift in Sources */,
