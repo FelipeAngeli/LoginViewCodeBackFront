@@ -25,7 +25,7 @@ class HomeScreen: UIView {
         self.setUpConstraints()
     }
     private func configBackground(){
-        self.backgroundColor = UIColor(red: 24/255, green: 117/255, blue: 104/255, alpha: 1.0)
+        self.backgroundColor = UIColor(red: 18/255, green: 32/255, blue: 43/255, alpha: 1.0)
     }
 
     

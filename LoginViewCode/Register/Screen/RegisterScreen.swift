@@ -64,8 +64,62 @@ class RegisterScreen: UIView {
         tf.font = UIFont.systemFont(ofSize: 14)
         tf.isSecureTextEntry = true
         tf.textColor = .darkGray
+        tf.rightView = togglePasswordVisibilityButton
+        tf.rightViewMode = .always
         return tf
     }()
+    
+
+    
+    lazy var togglePasswordVisibilityButton: UIButton = {
+        let button = UIButton(type: .custom)
+        button.setImage(UIImage(systemName: "eye.fill"), for: .normal)
+        button.setImage(UIImage(systemName: "eye.slash.fill"), for: .selected)
+        button.tintColor = backGroundColor
+        button.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 5)
+        button.addTarget(self, action: #selector(togglePasswordVisibility), for: .touchUpInside)
+        return button
+    }()
+    
+    
+    @objc func togglePasswordVisibility() {
+        passwordTextField.isSecureTextEntry.toggle()
+        togglePasswordVisibilityButton.isSelected.toggle()
+    }
+    
+    lazy var confirmPasswordTextField: UITextField = {
+        let tf = UITextField()
+        tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.autocorrectionType = .no
+        tf.backgroundColor = .white
+        tf.borderStyle = .roundedRect
+        tf.keyboardType = .default
+        tf.placeholder = "Confirme sua senha"
+        tf.font = UIFont.systemFont(ofSize: 14)
+        tf.isSecureTextEntry = true
+        tf.textColor = .darkGray
+        tf.rightView = changeVisibilityButtonConfirmPassword
+        tf.rightViewMode = .always
+        return tf
+    }()
+    
+    lazy var changeVisibilityButtonConfirmPassword: UIButton = {
+        let button = UIButton(type: .custom)
+        button.setImage(UIImage(systemName: "eye.fill"), for: .normal)
+        button.setImage(UIImage(systemName: "eye.slash.fill"), for: .selected)
+        button.tintColor = backGroundColor
+        button.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 5)
+        button.addTarget(self, action: #selector(togglePasswordChangeVisibility), for: .touchUpInside)
+        return button
+    }()
+    
+    
+    @objc func togglePasswordChangeVisibility() {
+        confirmPasswordTextField.isSecureTextEntry.toggle()
+        changeVisibilityButtonConfirmPassword.isSelected.toggle()
+    }
+    
+    let backgroundBtnColor = UIColor(red: 253/255, green: 18/255, blue: 81/255, alpha: 1.0)
     
     lazy var registerButton:UIButton = {
         let button = UIButton()
@@ -74,7 +128,7 @@ class RegisterScreen: UIView {
         button.setTitleColor(.white, for: .normal)
         button.clipsToBounds = true
         button.layer.cornerRadius = 7.5
-        button.backgroundColor = UIColor(red: 3/255, green: 58/255, blue: 51/255, alpha: 1.0)
+        button.backgroundColor = backgroundBtnColor
         button.addTarget(self, action: #selector(self.tappedRegisterButton), for: .touchUpInside)
         return button
     }()
@@ -101,12 +155,14 @@ class RegisterScreen: UIView {
         self.addSubview(self.backButton)
         self.addSubview(self.emailTextField)
         self.addSubview(self.passwordTextField)
+        self.addSubview(self.confirmPasswordTextField)
         self.addSubview(self.registerButton)
     }
     
+    let backGroundColor = UIColor(red: 18/255, green: 32/255, blue: 43/255, alpha: 1.0)
     
     private func configBackGround(){
-        self.backgroundColor = UIColor(red: 24/255, green: 117/255, blue: 104/255, alpha: 1.0)
+        self.backgroundColor = backGroundColor
     }
     
     public func configTextFieldDelegate(delegate: UITextFieldDelegate){
@@ -124,15 +180,40 @@ class RegisterScreen: UIView {
     }
     
     //validacao de campos
+    
     public func validaTextFields(){
         let email: String = self.emailTextField.text ?? ""
         let password: String = self.passwordTextField.text ?? ""
+        let confirmPassword: String = self.confirmPasswordTextField.text ?? ""
         
-        if !email.isEmpty && !password.isEmpty {
+        let isEmailValid = isValidEmail(email)
+        let isPasswordValid = arePasswordsValid(password, confirmPassword)
+        
+        if isEmailValid && isPasswordValid {
             self.configButtonEnable(true)
         } else {
             self.configButtonEnable(false)
         }
+        
+        highlightTextField(textField: emailTextField, isValid: isEmailValid)
+        highlightTextField(textField: passwordTextField, isValid: isPasswordValid)
+        highlightTextField(textField: confirmPasswordTextField, isValid: isPasswordValid)
+    }
+    
+    func isValidEmail(_ email: String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailPred.evaluate(with: email)
+    }
+    
+    func arePasswordsValid(_ password: String, _ confirmPassword: String) -> Bool {
+        return !password.isEmpty && password == confirmPassword
+    }
+    
+    func highlightTextField(textField: UITextField, isValid: Bool) {
+        textField.layer.borderColor = isValid ? UIColor.green.cgColor : UIColor(red: 253/255, green: 18/255, blue: 81/255, alpha: 1.0).cgColor
+        textField.layer.borderWidth = 1.0
+        textField.layer.cornerRadius = 5.0
     }
     
     //get para infos da login
@@ -184,7 +265,12 @@ class RegisterScreen: UIView {
             self.passwordTextField.trailingAnchor.constraint(equalTo: self.emailTextField.trailingAnchor),
             self.passwordTextField.heightAnchor.constraint(equalTo: self.emailTextField.heightAnchor),
             
-            self.registerButton.topAnchor.constraint(equalTo: self.passwordTextField.bottomAnchor, constant: 15),
+            self.confirmPasswordTextField.topAnchor.constraint(equalTo: self.passwordTextField.bottomAnchor, constant: 15),
+            self.confirmPasswordTextField.leadingAnchor.constraint(equalTo: self.emailTextField.leadingAnchor),
+            self.confirmPasswordTextField.trailingAnchor.constraint(equalTo: self.emailTextField.trailingAnchor),
+            self.confirmPasswordTextField.heightAnchor.constraint(equalTo: self.emailTextField.heightAnchor),
+            
+            self.registerButton.topAnchor.constraint(equalTo: self.confirmPasswordTextField.bottomAnchor, constant: 15),
             self.registerButton.leadingAnchor.constraint(equalTo: self.passwordTextField.leadingAnchor),
             self.registerButton.trailingAnchor.constraint(equalTo: self.passwordTextField.trailingAnchor),
             self.registerButton.heightAnchor.constraint(equalTo: self.passwordTextField.heightAnchor),
@@ -192,53 +278,6 @@ class RegisterScreen: UIView {
         ])
     }
     
-    // MARK: - SnapKit
-
-
-//    func configImageAddUserConstraint() {
-//        self.imageAddUser.snp.makeConstraints { (make) in
-//            make.top.equalTo(self.safeAreaLayoutGuide.snp.top).offset(20)
-//            make.centerX.equalToSuperview()
-//            make.height.width.equalTo(150)
-//        }
-//    }
-//
-//    func configBackButtonConstraint() {
-//            self.backButton.snp.makeConstraints { (make) in
-//                make.top.equalTo(self.imageAddUser.snp.top)
-//                make.leading.equalToSuperview().offset(20)
-//              make.height.width.equalTo(36)
-//            }
-//        }
-//
-//        func configEmailTextFieldConstraint() {
-//            self.emailTextField.snp.makeConstraints { (make) in
-//                make.top.equalTo(self.imageAddUser.snp.bottom).offset(10)
-//                make.centerX.equalToSuperview()
-//                make.leading.equalToSuperview().offset(20)
-//                make.trailing.equalToSuperview().inset(20)
-//                make.height.equalTo(45)
-//            }
-//        }
-//
-//        func configPasswordTextFieldConstraint() {
-//            self.passwordTextField.snp.makeConstraints { (make) in
-//                make.top.equalTo(self.emailTextField.snp.bottom).offset(15)
-//                make.leading.equalTo(self.emailTextField.snp.leading)
-//                make.trailing.equalTo(self.emailTextField.snp.trailing)
-//                make.height.equalTo(self.emailTextField.snp.height)
-//            }
-//        }
-//
-//        func configRegisterButtonConstraint() {
-//            self.registerButton.snp.makeConstraints { (make) in
-//                make.top.equalTo(self.passwordTextField.snp.bottom).offset(15)
-//                make.leading.equalTo(self.passwordTextField.snp.leading)
-//                make.trailing.equalTo(self.passwordTextField.snp.trailing)
-//                make.height.equalTo(self.passwordTextField.snp.height)
-//            }
-//        }
-
     
 }
 
