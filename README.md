@@ -9,6 +9,10 @@ O "LoginViewCode" é um projeto inovador para iOS que utiliza Firebase para um s
     
 
 
+Uploading gravacao_tela_loginViewCode.mp4…
+
+
+
 ## 🎯 Funcionalidades Principais:
 
 
